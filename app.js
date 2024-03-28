@@ -1,7 +1,9 @@
 
 // dataset
 var interests = [
-    // tech
+    // This is the datases. 
+    // Each interest is linked to categories
+    // The script determines what interest a person could have in other categories that are linked to the interests the person chose
     { interest : "Technical support specialist", category : ["tech", "technology support"]},
     { interest : "computer programming", category : ["tech", "programming"]},
     { interest : "data analyst", category : ["data science", "data", "tech"]},
@@ -46,7 +48,7 @@ var interests = [
     { interest : "ceo", category : ["business","office","management"]},
     { interest : "mining", category : ["gold", "copper", "minerals"]}, 
 ];
-
+// Below is the function that processes the interests given
 function process(){
 let recommendations = [];
 let cat1 = document.getElementById("cat1").value;
@@ -57,21 +59,24 @@ let cat3 = document.getElementById("cat3").value;
        dataE.push(cat2);
        dataE.push(cat3);
        
-//        alert(dataE)
+// dataE is the variable that stores the values (interests selected) from the html
 var search = dataE, categories = [];
-//console.log(search)
+
 search.map(all=>{
     interests.map(r=>{
         if(all === r.interest) categories=categories.concat(r.category);
     })
 })
-//console.log(categories) 
+// You can check the categories which the interests a user selected belong to --
+ // console.log(categories)
+    
 interests.map(all =>{
     categories.map(category =>{
         if(all.category.includes(category)&&recommendations.indexOf(all.interest)===-1)
             recommendations = recommendations.concat(all.interest)
     })
 })
+    // the code above gets all the interests from the categories which where stored, because each interest in linked to another by a category
 //alert(recommendations)
      let dcells = document.getElementById("data");
             dcells.innerHTML = " "
