@@ -1,5 +1,5 @@
 
-// dataset
+// this is  the dataset, you can add as many categories as you want
 var interests = [
     // This is the datases. 
     // Each interest is linked to categories
