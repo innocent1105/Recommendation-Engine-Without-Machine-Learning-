@@ -1,6 +1,6 @@
 
 // this is  the dataset, you can add as many categories as you want
-var interests = [
+var interests = [       
     // This is the datases. 
     // Each interest is linked to categories
     // The script determines what interest a person could have in other categories that are linked to the interests the person chose
